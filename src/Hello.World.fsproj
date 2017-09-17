@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyName>Hello.World</AssemblyName>
+    <PackageId>Hello.World</PackageId>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Authors>Jon Roberts</Authors>
+    <Company>Real Play Gaming</Company>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <AssemblyTitle>Hello World Test</AssemblyTitle>
+    <Description>Just a Dumb Test</Description>
+    <Copyright>Real Play Gaming 2017-2018</Copyright>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Library.fs" />
+  </ItemGroup>
+
+</Project>
