@@ -4,12 +4,12 @@ open System.Reflection
 
 [<assembly: AssemblyVersionAttribute("1.0.1.0")>]
 [<assembly: AssemblyFileVersionAttribute("1.0.1.0")>]
-[<assembly: AssemblyTitleAttribute("Gotcha.Core")>]
-[<assembly: AssemblyDescriptionAttribute("Core Gotcha Game Engine")>]
+[<assembly: AssemblyTitleAttribute("Hello.World")>]
+[<assembly: AssemblyDescriptionAttribute("Silly Test Package")>]
 do ()
 
 module internal AssemblyVersionInformation =
     let [<Literal>] AssemblyVersion = "1.0.1.0"
     let [<Literal>] AssemblyFileVersion = "1.0.1.0"
-    let [<Literal>] AssemblyTitle = "Gotcha.Core"
-    let [<Literal>] AssemblyDescription = "Core Gotcha Game Engine"
+    let [<Literal>] AssemblyTitle = "Hello.World"
+    let [<Literal>] AssemblyDescription = "Silly Test Package"

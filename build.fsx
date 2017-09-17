@@ -49,8 +49,8 @@ Target "AssemblyInfo" (fun _ ->
         GitVersion (fun p -> { p with ToolPath = gitVersion })
     [ Attribute.Version verInfo.AssemblySemVer
       Attribute.FileVersion verInfo.AssemblySemVer
-      Attribute.Title "Gotcha.Core"
-      Attribute.Description "Core Gotcha Game Engine" ]
+      Attribute.Title "Hello.World"
+      Attribute.Description "Silly Test Package" ]
     |> CreateFSharpAssemblyInfo ("src/" </> "AssemblyInfo.fs")
 )
 
