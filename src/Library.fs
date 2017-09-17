@@ -1,4 +1,4 @@
-namespace src
+namespace Hello.World
 
 module Say =
     let hello name =
