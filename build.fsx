@@ -39,14 +39,15 @@ Target "Clean" (fun _ ->
     CleanDirs [deployDir]
 )
 
+let verInfo = 
+    let gitVersion = 
+        let gvString = Environment.GetEnvironmentVariable("GitVersion")
+        match gvString with
+        | "" -> "GitVersion.exe"
+        | _ -> gvString
+    GitVersion (fun p -> { p with ToolPath = gitVersion })
+
 Target "AssemblyInfo" (fun _ ->
-    let verInfo = 
-        let gitVersion = 
-            let gvString = Environment.GetEnvironmentVariable("GitVersion")
-            match gvString with
-            | "" -> "GitVersion.exe"
-            | _ -> gvString
-        GitVersion (fun p -> { p with ToolPath = gitVersion })
     [ Attribute.Version verInfo.AssemblySemVer
       Attribute.FileVersion verInfo.AssemblySemVer
       Attribute.Title "Hello.World"
@@ -67,6 +68,7 @@ Target "Pack" (fun _ ->
         {p with
             OutputPath = nugetDir
             WorkingDir = sourcePath
+            Version = verInfo.AssemblySemVer
             // Version = gitVer.NuGetVersionV2
          })
 )
