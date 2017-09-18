@@ -64,13 +64,23 @@ Target "Build" (fun _ ->
 )
 
 Target "Pack" (fun _ ->
-    Paket.Pack (fun p ->
-        {p with
+    // workaround to avoid these issues with Paket Pack on DotNetCli:
+    // https://github.com/fsprojects/Paket/issues/2330
+    // https://github.com/fsprojects/Paket/issues/2248
+    DotNetCli.Pack (fun p ->
+        { p with
             OutputPath = nugetDir
             WorkingDir = sourcePath
-            Version = verInfo.AssemblySemVer
-            // Version = gitVer.NuGetVersionV2
-         })
+            //Major = verInfo.Major
+            
+        })
+    // Paket.Pack (fun p ->
+    //     {p with
+    //         OutputPath = nugetDir
+    //         WorkingDir = sourcePath
+    //         Version = verInfo.AssemblySemVer
+    //         // Version = gitVer.NuGetVersionV2
+    //      })
 )
 
 Target "Deploy" (fun _ ->
